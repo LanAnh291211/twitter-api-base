@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  twitter-api:
+    image: twitter-api
+    container_name: twitter_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://34.87.103.162:3306/twitter
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=@dmin1234
+    ports:
+      - "18080:8080"

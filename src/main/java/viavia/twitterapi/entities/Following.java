@@ -17,7 +17,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "following")
+@Table(name = "followings")
 public class Following {
     @EmbeddedId
     private FollowingId id;

@@ -23,6 +23,7 @@ public class Following {
     private FollowingId id;
 
     @Data
+    @Builder
     @Embeddable
     @NoArgsConstructor
     @AllArgsConstructor

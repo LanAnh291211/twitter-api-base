@@ -10,7 +10,7 @@ import viavia.twitterapi.base.SuccessResponse;
 @RequestMapping("test")
 public class TestController {
     @GetMapping("ping")
-    public SuccessResponse<String> login() {
+    public SuccessResponse<String> ping() {
         return new SuccessResponse<>("ping");
     }
 }

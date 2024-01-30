@@ -18,7 +18,7 @@ public class FollowingServiceImpl implements FollowingService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class})
-    public void addFollowing(FollowingRequestDTO followingRequestDTO) {
+    public void createFollowing(FollowingRequestDTO followingRequestDTO) {
         try {
             Following following = followingMapper.fromFollowingRequestDTO(followingRequestDTO);
             followingRepository.save(following);

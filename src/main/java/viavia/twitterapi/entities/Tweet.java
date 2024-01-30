@@ -12,11 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import java.util.Date;
 
@@ -38,8 +35,7 @@ public class Tweet {
     @Column(name = "tweet_picture")
     private String tweetPicture;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "tweet_date", nullable = false, updatable = false)
+    @Column(name = "tweet_date")
     private Date tweetDate;
 
     @Column(name = "user_id")
@@ -48,9 +44,4 @@ public class Tweet {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
     private User login;
-
-    @PrePersist
-    protected void onCreate() {
-        tweetDate = new Date();
-    }
 }

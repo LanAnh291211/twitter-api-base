@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
             throw new BaseException("user is exists");
         }
 
-        User user = userMapper.fromRegisterRequestDTO(registerRequestDTO);
+        User user = userMapper.fromRegisterDTO(registerRequestDTO);
         user.setPassword(passwordEncoder.encode(registerRequestDTO.getPassword()));
         userRepository.save(user);
     }

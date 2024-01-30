@@ -22,18 +22,18 @@ public class FollowingController {
             FollowingRequestDTO followingRequestDTO
     ) {
         switch (op) {
-            case 1 -> followingService.addFollowing(followingRequestDTO);
+            case 1 -> followingService.createFollowing(followingRequestDTO);
             case 2 -> followingService.deleteFollowing(followingRequestDTO);
         }
         return new SuccessResponse<>(null, "following is updated");
     }
 
     @GetMapping("is-following")
-    public SuccessResponse<Boolean> isFollowing(
+    public SuccessResponse<Void> isFollowing(
             FollowingRequestDTO followingRequestDTO
     ) {
         boolean isFollowing = followingService.checkIsFollowing(followingRequestDTO);
         String message = isFollowing ? "is subsriber" : "isnot subscriber";
-        return new SuccessResponse<>(isFollowing, message);
+        return new SuccessResponse<>(null, message);
     }
 }

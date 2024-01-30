@@ -12,5 +12,5 @@ public interface UserMapper {
     LoginResponseDTO toResponseDTO(User login);
 
     @Mapping(target = "password", ignore = true)
-    User fromRegisterRequestDTO(RegisterRequestDTO registerRequestDTO);
+    User fromRegisterDTO(RegisterRequestDTO registerRequestDTO);
 }

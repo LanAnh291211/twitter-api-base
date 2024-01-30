@@ -1,14 +1,16 @@
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: /api/v1
 
-keycloak:
-  auth-server-url: http://localhost:28080
-  realm: plc
-  resource: phuoctruong
-  principal-attribute: preferred_username
-  bearer-only: true
-  ssl-required: external
-  cors: true
-  use-resource-role-mappings: true
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  datasource:
+    url: jdbc:mysql://34.87.103.162:3306/twitter
+    username: root
+    password: "@dmin1234"
+    driver-class-name: com.mysql.cj.jdbc.Driver

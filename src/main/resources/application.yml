@@ -14,3 +14,11 @@ spring:
     username: root
     password: "@dmin1234"
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: "/api-docs/swagger"
+  swagger-ui:
+    enabled: true
+    path: "/api-docs/swagger-ui"
